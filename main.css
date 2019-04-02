@@ -1,0 +1,107 @@
+/***** PAGE SETUP *****/
+html,
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Montserrat', serif;
+  line-height: 1.5;
+  background-color: rgb(250, 250, 250);
+  transition: 0.8s all;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Work Sans', sans-serif;
+}
+
+/***** LANDING *****/
+
+.landing {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9.2fr 0.8fr;
+}
+
+.landing__image {
+  background-image: url('img/me.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 1000px;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.landing__intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2em;
+}
+
+.landing__intro a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font: inherit;
+}
+
+.landing__intro p {
+  max-width: 600px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.arrow {
+  color: salmon;
+  transition: all 0.2s;
+  margin-left: 2px;
+}
+
+.underline {
+  cursor: pointer;
+  border-bottom: 2px solid salmon;
+}
+
+.underline:hover {
+  background-color: salmon;
+  cursor: pointer;
+}
+
+.underline:hover > .arrow {
+  color: black;
+  margin-left: 6px;
+  padding-right: 3px;
+}
+
+.icon-wrapper {
+  max-width: 600px;
+  margin-top: 40px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icon {
+  margin: 20px;
+}
+
+.icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.icon a {
+  color: inherit;
+  text-decoration: none;
+}
