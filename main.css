@@ -49,10 +49,6 @@ h6 {
   font: inherit;
 }
 
-.landing__intro p {
-  
-}
-
 .italic {
   font-style: italic;
 }
@@ -102,7 +98,7 @@ h6 {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 940px) {
 
   .landing {
     display: flex;
@@ -121,5 +117,7 @@ h6 {
     object-fit: contain;
   }
 
-
+  .icons {
+    justify-content: space-evenly;
+  }
 }

@@ -1,13 +1,24 @@
-// /-------------Switch hero image ----------/
-
 const imageEl = document.querySelector('.landing__image');
+const allSpans = document.querySelectorAll('.landing__intro > p > span');
+const emojiEl = document.querySelector('#point');
 
-const allSpans = document.querySelectorAll('.landing__intro > p > span')
-
+// /-------------Switch hero image ----------/
 const switchImg = function(ele) {
   const getImgId = ele.target.id;
   imageEl.src = `img/${getImgId}.jpg`;
-  console.log(getImgId, getImgEl.src);
 };
 
 allSpans.forEach(el => el.addEventListener('click', switchImg));
+
+// /-------------Switch emoji ----------/
+
+const switchEmoji = function() {
+  if (window.innerWidth < 940) {
+    emojiEl.innerHTML = "☝️";
+  } else {
+    emojiEl.innerHTML = "👈";
+  }
+}
+
+window.addEventListener('resize', switchEmoji);
+window.onload = switchEmoji;
