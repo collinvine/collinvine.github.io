@@ -23,23 +23,19 @@ h6 {
 
 .landing {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 9.2fr 0.8fr;
+  display: flex;
+  align-items: center;
 }
 
 .landing__image {
-  background-image: url('img/me.jpg');
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: contain;
-  max-width: 1000px;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .landing__intro {
+  max-width: 600px;
+  min-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +50,7 @@ h6 {
 }
 
 .landing__intro p {
-  max-width: 600px;
+  
 }
 
 .italic {
@@ -104,4 +100,26 @@ h6 {
 .icon a {
   color: inherit;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image__div {
+    max-height: 50vh;
+  }
+
+  .landing__image {
+    min-height: 400px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+
 }
