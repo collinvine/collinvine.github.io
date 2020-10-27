@@ -35,7 +35,6 @@ h6 {
 
 .landing__intro {
   max-width: 600px;
-  min-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,10 +110,13 @@ h6 {
   }
 
   .landing__image {
-    min-height: 400px;
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+
+  .landing__intro {
+    padding: 0 12px;
   }
 
   .icons {
