@@ -97,6 +97,31 @@ h6 {
   text-decoration: none;
 }
 
+.now, .work {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  border-bottom: 1px solid #d1d3d4;
+}
+
+.more--arrow {
+  margin-left: 1em;
+  /* font-weight: bolder; */
+}
+
+.now:hover, .work:hover {
+  background-color: salmon;
+  cursor: pointer;
+  padding-left: 8px;
+}
+
+.more--arrow:hover {
+  margin-left: 6px;
+  padding-right: 3px;
+}
+
+
+
 @media only screen and (max-width: 940px) {
 
   .landing {

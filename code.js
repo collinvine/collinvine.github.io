@@ -1,5 +1,5 @@
 const imageEl = document.querySelector('.landing__image');
-const allSpans = document.querySelectorAll('.landing__intro > p > span');
+const allSpans = document.querySelectorAll('.landing__intro > div > p > span');
 const emojiEl = document.querySelector('#point');
 
 // /-------------Switch hero image ----------/
