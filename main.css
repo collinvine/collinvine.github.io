@@ -170,6 +170,11 @@ h6 {
   margin-bottom: 30px;
 }
 
+.date {
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
 .label--highlight {
   background-color: palegoldenrod;
   padding: 0 2px 0 2px;
