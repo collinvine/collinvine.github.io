@@ -1,4 +1,4 @@
-/***** PAGE SETUP *****/
+/* PAGE SETUP */
 html,
 body {
   margin: 0;
@@ -6,7 +6,7 @@ body {
   font-family: 'Montserrat', serif;
   line-height: 1.5;
   background-color: rgb(250, 250, 250);
-  transition: 0.8s all;
+  transition: all 0.8s;
   scroll-behavior: smooth;
 }
 
@@ -19,12 +19,16 @@ h6 {
   font-family: 'Work Sans', sans-serif;
 }
 
-/***** INDEX.HTML *****/
-
+/* INDEX.HTML */
 .landing {
   height: 100vh;
   display: flex;
   align-items: center;
+
+  /* Mobile adjustments */
+  @media only screen and (max-width: 940px) {
+    flex-direction: column;
+  }
 }
 
 .landing__image {
@@ -45,7 +49,7 @@ h6 {
   text-decoration: none;
   color: inherit;
   font-size: inherit;
-  font: inherit;
+  font-family: inherit;
 }
 
 .italic {
@@ -68,7 +72,7 @@ h6 {
   cursor: pointer;
 }
 
-.underline:hover > .arrow {
+.underline:hover>.arrow {
   color: black;
   margin-left: 6px;
   padding-right: 3px;
@@ -101,7 +105,8 @@ h6 {
   margin: 20px 0;
 }
 
-.now, .work {
+.now,
+.work {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #d1d3d4;
@@ -112,7 +117,8 @@ h6 {
   margin-left: 1em;
 }
 
-.now:hover, .work:hover {
+.now:hover,
+.work:hover {
   background-color: salmon;
   cursor: pointer;
 }
@@ -122,41 +128,10 @@ h6 {
   padding-right: 3px;
 }
 
-
-
-@media only screen and (max-width: 940px) {
-
-  .landing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image__div {
-    max-height: 50vh;
-  }
-
-  .landing__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .landing__intro {
-    padding: 0 12px;
-  }
-
-  .icons {
-    justify-content: space-evenly;
-  }
-}
-
-/***** NOW PAGE *****/
-
+/* NOW PAGE */
 .now__main-content {
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   margin-top: 80px;
   padding: 0 20px;
 }
