@@ -1,13 +1,36 @@
 /* PAGE SETUP */
-html,
+:root {
+  /* Define colors as CSS variables for easy maintenance */
+  --background-color: rgb(250, 250, 250);
+  --text-color: #333;
+  /* Assuming a default dark grey, adjust if needed */
+  --primary-accent-color: salmon;
+  --secondary-accent-color: palegoldenrod;
+  --border-color: #d1d3d4;
+  --link-hover-text: black;
+
+  /* Font stacks */
+  --font-body: 'Montserrat', sans-serif;
+  --font-heading: 'Work Sans', sans-serif;
+
+  /* Base font size for rem calculation */
+  --base-font-size: 16px;
+}
+
+html {
+  font-size: var(--base-font-size);
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-size: 16px;
-  font-family: 'Montserrat', serif;
-  line-height: 1.5;
-  background-color: rgb(250, 250, 250);
-  transition: all 0.8s;
-  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  /* Slightly increased line-height for readability */
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color 0.8s;
+  /* Transition only background-color */
 }
 
 h1,
@@ -16,141 +39,293 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--font-heading);
+  line-height: 1.3;
+  /* Adjust heading line-height */
+  margin-top: 1.5rem;
+  /* Consistent top margin */
+  margin-bottom: 1rem;
+  /* Consistent bottom margin */
 }
 
-/* INDEX.HTML */
+h1 {
+  font-size: 2.5rem;
+  /* Example using rem */
+}
+
+h3 {
+  font-size: 1.25rem;
+  /* Example using rem */
+}
+
+p {
+  margin-bottom: 1rem;
+  /* Consistent paragraph spacing */
+}
+
+a {
+  color: inherit;
+  /* Default link color inherits from parent */
+  text-decoration: none;
+  /* Remove default underline */
+}
+
+/* INDEX.HTML STYLES */
 .landing {
-  height: 100vh;
+  min-height: 100vh;
+  /* Use min-height to prevent content overflow issues */
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* Center content horizontally */
+  padding: 1rem;
+  /* Add some padding for smaller screens */
+  box-sizing: border-box;
+  /* Include padding in height calculation */
+}
 
-  /* Mobile adjustments */
-  @media only screen and (max-width: 940px) {
-    flex-direction: column;
-  }
+.image__div {
+  flex: 1 1 50%;
+  /* Allow image div to grow and shrink */
+  max-width: 50%;
+  /* Limit image width on larger screens */
+  height: auto;
+  /* Adjust height automatically */
+  max-height: 90vh;
+  /* Prevent image from being too tall */
+  display: flex;
+  /* Center image vertically/horizontally if needed */
+  justify-content: center;
+  align-items: center;
 }
 
 .landing__image {
-  height: 100%;
-  width: 100%;
+  max-width: 100%;
+  /* Ensure image scales down */
+  max-height: 100%;
+  /* Ensure image scales down */
+  height: auto;
+  /* Maintain aspect ratio */
+  width: auto;
+  /* Maintain aspect ratio */
   object-fit: contain;
+  /* Keep contain, but dimensions are now more flexible */
+  display: block;
+  /* Remove potential extra space below image */
 }
 
 .landing__intro {
+  flex: 1 1 50%;
+  /* Allow text div to grow and shrink */
   max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 2em;
-}
-
-.landing__intro a {
-  text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-  font-family: inherit;
+  padding: 0 2rem;
+  /* Use rem for padding */
+  box-sizing: border-box;
 }
 
 .italic {
   font-style: italic;
+  color: #555;
+  /* Slightly muted color for italic text */
 }
 
 .arrow {
-  color: salmon;
-  transition: all 0.2s;
-  margin-left: 2px;
+  color: var(--primary-accent-color);
+  transition: all 0.2s ease-in-out;
+  margin-left: 0.2em;
+  /* Use em for spacing relative to font size */
+  display: inline-block;
+  /* Ensure transforms/margins work correctly */
 }
 
 .underline {
   cursor: pointer;
-  border-bottom: 2px solid salmon;
+  border-bottom: 2px solid var(--primary-accent-color);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  /* Smooth transitions */
 }
 
-.underline:hover {
-  background-color: salmon;
-  cursor: pointer;
+.underline:hover,
+.underline:focus {
+  /* Add focus state for accessibility */
+  background-color: var(--primary-accent-color);
+  color: var(--link-hover-text);
+  /* Ensure text is readable on hover */
+  outline: none;
+  /* Optional: remove default focus outline if custom style is sufficient */
 }
 
 .underline:hover>.arrow {
-  color: black;
-  margin-left: 6px;
-  padding-right: 3px;
+  color: var(--link-hover-text);
+  margin-left: 0.5em;
+  /* Increase margin on hover */
 }
 
 .icon-wrapper {
-  max-width: 600px;
-  margin-top: 40px;
+  margin-top: 2.5rem;
+  /* Use rem */
 }
 
 .icons {
   display: flex;
+  flex-wrap: wrap;
+  /* Allow icons to wrap on small screens */
+  gap: 1.5rem;
+  /* Use gap for spacing between icons */
+  margin-left: -0.5rem;
+  /* Adjust alignment if needed */
 }
 
 .icon {
-  margin: 20px;
+  margin: 0;
+  /* Remove margin, using gap now */
 }
 
 .icon img {
   width: 24px;
   height: 24px;
+  display: block;
+  /* Remove potential extra space */
+  transition: transform 0.2s ease-in-out;
+  /* Add subtle hover effect */
 }
 
-.icon a {
-  color: inherit;
-  text-decoration: none;
+.icon a:hover img,
+.icon a:focus img {
+  transform: scale(1.1);
+  /* Slightly enlarge icon on hover/focus */
 }
 
 .more {
-  margin: 20px 0;
+  margin: 1.5rem 0;
+  /* Use rem */
 }
 
 .now,
 .work {
+  /* Combine styles for .now and .work if they are identical */
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #d1d3d4;
-  padding-left: 4px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 0.25rem;
+  /* Use rem */
+  transition: background-color 0.2s ease-in-out;
 }
 
 .more--arrow {
   margin-left: 1em;
+  display: inline-block;
+  /* Ensure transitions work */
+  transition: margin-left 0.2s ease-in-out;
 }
 
 .now:hover,
-.work:hover {
-  background-color: salmon;
+.work:hover,
+.now:focus,
+/* Add focus state */
+.work:focus {
+  background-color: var(--primary-accent-color);
   cursor: pointer;
+  color: var(--link-hover-text);
+  /* Ensure text readability */
+  outline: none;
 }
 
-.more--arrow:hover {
-  margin-left: 6px;
-  padding-right: 3px;
+.now:hover .more--arrow,
+.work:hover .more--arrow,
+.now:focus .more--arrow,
+.work:focus .more--arrow {
+  margin-left: 1.5em;
+  /* Increase arrow margin on hover/focus */
+  color: var(--link-hover-text);
 }
 
-/* NOW PAGE */
+/* NOW PAGE STYLES */
 .now__main-content {
   max-width: 600px;
-  margin: auto;
-  margin-top: 80px;
-  padding: 0 20px;
-}
-
-.now__main-content a {
-  color: inherit;
-  text-decoration: none;
+  margin: 5rem auto;
+  /* Use rem and provide top/bottom margin */
+  padding: 0 1.25rem;
+  /* Use rem */
 }
 
 .back-button {
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
+  /* Use rem */
 }
 
 .date {
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.8rem;
+  /* Use rem */
+  font-weight: 600;
+  /* Make date slightly bolder */
+  color: #555;
+  /* Muted color for date */
+  margin-bottom: 0.5rem;
+}
+
+.update {
+  margin-bottom: 2.5rem;
+  /* Space between update sections */
 }
 
 .label--highlight {
-  background-color: palegoldenrod;
-  padding: 0 2px 0 2px;
+  background-color: var(--secondary-accent-color);
+  padding: 0.1em 0.3em;
+  /* Use em for padding relative to font size */
+  border-radius: 3px;
+  /* Slightly rounded corners */
+}
+
+/* RESPONSIVENESS */
+@media only screen and (max-width: 940px) {
+  .landing {
+    flex-direction: column;
+    height: auto;
+    /* Allow height to adjust to content */
+    min-height: 100vh;
+    padding-top: 2rem;
+    /* Add padding top on mobile */
+    justify-content: flex-start;
+    /* Align content to top */
+  }
+
+  .image__div {
+    max-width: 80%;
+    /* Allow image to be wider on mobile */
+    order: 1;
+    /* Show image first */
+    margin-bottom: 2rem;
+    max-height: 40vh;
+    /* Limit image height */
+  }
+
+  .landing__intro {
+    max-width: 100%;
+    /* Full width on mobile */
+    order: 2;
+    /* Show text second */
+    padding: 0 1rem;
+    /* Adjust padding */
+  }
+
+  .icon-wrapper {
+    margin-top: 2rem;
+  }
+
+  .icons {
+    justify-content: center;
+    /* Center icons on mobile */
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+    /* Slightly smaller h1 on small screens */
+  }
+
+  /* Add any other fine-tuning for very small screens */
 }
