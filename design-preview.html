@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Design Options</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* BASE STYLES */
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+            --brand-accent: #4F46E5;
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --max-width: 900px;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 100px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-heading);
+            color: var(--text-main);
+        }
+
+        a {
+            color: var(--brand-accent);
+            text-decoration: none;
+        }
+
+        .proposal-header {
+            background: #eee;
+            padding: 1rem;
+            margin: 4rem 0 2rem;
+            border-radius: 8px;
+        }
+
+        /* ------------------------------ */
+        /* VARIATION 1: CLASSIC (Clean)   */
+        /* ------------------------------ */
+        .timeline-classic {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #E5E7EB;
+        }
+
+        .timeline-classic .item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-classic .item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.35rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            background: var(--bg-color);
+            border: 2px solid var(--brand-accent);
+            border-radius: 50%;
+        }
+
+        .timeline-classic .date {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--brand-accent);
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        /* ------------------------------ */
+        /* VARIATION 2: MODERN (Soft)     */
+        /* ------------------------------ */
+        .timeline-modern {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline-modern::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 10px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #4F46E5, #E5E7EB);
+            opacity: 0.3;
+        }
+
+        .timeline-modern .item {
+            position: relative;
+            margin-bottom: 3.5rem;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .timeline-modern .item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 2.5rem;
+            width: 16px;
+            height: 16px;
+            background: #4F46E5;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #E0E7FF;
+            /* Glow effect */
+        }
+
+        .timeline-modern .date {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #6B7280;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* ------------------------------ */
+        /* VARIATION 3: EDGY (Bold/Tech)  */
+        /* ------------------------------ */
+        .timeline-edgy {
+            position: relative;
+            padding-left: 4rem;
+            border-left: 1px dashed #333;
+        }
+
+        .timeline-edgy .item {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-edgy .item::before {
+            content: '>';
+            font-family: 'JetBrains Mono', monospace;
+            position: absolute;
+            left: -5.2rem;
+            top: -0.2rem;
+            width: 2rem;
+            height: 2rem;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .timeline-edgy .date {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: #000;
+            background: #FDE047;
+            /* Highlighter yellow */
+            display: inline-block;
+            padding: 2px 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        .timeline-edgy p {
+            font-family: 'Inter', sans-serif;
+            color: #111;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <br>
+        <h1>Timeline Variations</h1>
+        <p>Here are three different stylistic takes on the timeline layout.</p>
+
+        <!-- VARIATION 1 -->
+        <div class="proposal-header">
+            <h2>Variation 1: The Classic</h2>
+            <p>Simple, clean, familiar. Uses the site's brand blue. Very minimal intervention.</p>
+        </div>
+
+        <div class="timeline-classic">
+            <div class="item">
+                <span class="date">Aug 8th, 2021</span>
+                <div>
+                    <p>After several months in the job market and with 4 good offers on the table, I took a job as a PM
+                        at
+                        YouTube at the end of Feb.</p>
+                    <p>It's completely different from what I expected. Given the size of Google/YouTube, I was expecting
+                        the
+                        work to be narrow and—relative to my founder experience—boring.</p>
+                </div>
+            </div>
+            <div class="item">
+                <span class="date">Nov 20th, 2020</span>
+                <div>
+                    <p>At the end of September, I decided to leave Colony, the company I co-founded, after 4.5 years. It
+                        was the right time for me to move forward.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- VARIATION 2 -->
+        <div class="proposal-header">
+            <h2>Variation 2: Modern Soft</h2>
+            <p>Adds depth with cards and soft shadows. Gradient timeline line. Feeling of polish.</p>
+        </div>
+
+        <div class="timeline-modern">
+            <div class="item">
+                <span class="date">August 8th, 2021</span>
+                <div>
+                    <p>After several months in the job market and with 4 good offers on the table, I took a job as a PM
+                        at
+                        YouTube at the end of Feb.</p>
+                    <p>It's completely different from what I expected. Given the size of Google/YouTube, I was expecting
+                        the
+                        work to be narrow and—relative to my founder experience—boring.</p>
+                </div>
+            </div>
+            <div class="item">
+                <span class="date">November 20th, 2020</span>
+                <div>
+                    <p>At the end of September, I decided to leave Colony, the company I co-founded, after 4.5 years. It
+                        was the right time for me to move forward.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- VARIATION 3 -->
+        <div class="proposal-header">
+            <h2>Variation 3: Edgy / Brutalist</h2>
+            <p>High contrast, dashed lines, monospaced fonts, highlighter accents. More personality.</p>
+        </div>
+
+        <div class="timeline-edgy">
+            <div class="item">
+                <span class="date">2021-08-08_UPDATE</span>
+                <div>
+                    <p>After several months in the job market and with 4 good offers on the table, I took a job as a PM
+                        at
+                        YouTube at the end of Feb.</p>
+                    <p>It's completely different from what I expected. Given the size of Google/YouTube, I was expecting
+                        the
+                        work to be narrow and—relative to my founder experience—boring.</p>
+                </div>
+            </div>
+            <div class="item">
+                <span class="date">2020-11-20_UPDATE</span>
+                <div>
+                    <p>At the end of September, I decided to leave Colony, the company I co-founded, after 4.5 years. It
+                        was the right time for me to move forward.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

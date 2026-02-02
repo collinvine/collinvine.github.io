@@ -8,99 +8,138 @@
     content="Collin Vine is a 2x founder (Zirtual, Colony) and product leader, currently building early stage AI products at Google.">
   <title>Collin Vine</title>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-85YE9Q6EFF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-85YE9Q6EFF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-85YE9Q6EFF');
-</script>
+    gtag('config', 'G-85YE9Q6EFF');
+  </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Work+Sans:400,600" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css?v=6">
 </head>
 
 <body>
-  <section class="landing">
-    <div class="image__div">
-      <!-- Added descriptive alt text -->
-      <img src="img/me.jpg" alt="Collin Vine speaking on stage at a 'Proof of Work Champion' event for Colony."
-        class="landing__image" id="mainImage">
-    </div>
-    <div class="landing__intro">
-      <div>
-        <h1>
-          Hey, I'm Collin.
-        </h1>
-        <p>
-          I'm a 2x founder of <a href="https://zirtual.com" target="_blank" rel="noopener noreferrer"
-            class="underline">Zirtual<span class="arrow">→</span></a> and then <a href="https://colony.io"
-            target="_blank" rel="noopener noreferrer" class="underline">Colony<span class="arrow">→</span></a>.
-          Currently I'm building new AI products at Google.
-        </p>
-        <p>
-          I'm an operational & UX-focused product leader who enjoys building things: companies, cultures, teams,
-          products, and ultimately value.
-        </p>
-        <p class="italic">
-          <span id="point">👈</span> That's <span class="underline" id="meTrigger">me</span>, pretending to say smart
-          things on stage. If you'd prefer, you can see me <span class="underline" id="handstandTrigger">doing a
-            handstand</span>, <span class="underline" id="familyTrigger">hangin' with my family</span>, or you can check
-          out <span class="underline" id="sourdoughTrigger">my homemade sourdough</span>.
-        </p>
-      </div>
-      <div class="more">
-        <a href="now.html">
-          <!-- Changed href to point to the actual file -->
-          <div class="now">
-            <p>What I'm doing now <span class="more--arrow">></span></p>
-          </div>
-        </a>
-        <!-- Keep work link commented out until page is ready
-          <div class="work">
-            <p><a href="work.html">My past work and projects <span class="more--arrow">></span></a></p>
-          </div>
-          -->
-      </div>
-      <div class="icon-wrapper">
-        <div class="icons">
-          <div class="icon">
-            <a href="https://twitter.com/collinvine" target="_blank" rel="noopener noreferrer"
-              aria-label="Twitter Profile">
-              <img src="img/icons/twitter.png" alt="Twitter icon">
-            </a>
-          </div>
-          <div class="icon">
-            <a href="https://github.com/collinvine" target="_blank" rel="noopener noreferrer"
-              aria-label="GitHub Profile">
-              <img src="img/icons/github.png" alt="GitHub icon">
-            </a>
-          </div>
-          <div class="icon">
-            <a href="https://www.linkedin.com/in/collinvine/" target="_blank" rel="noopener noreferrer"
-              aria-label="LinkedIn Profile">
-              <img src="img/icons/li.png" alt="LinkedIn icon">
-            </a>
-          </div>
-          <div class="icon">
-            <a href="https://medium.com/@collinvine" target="_blank" rel="noopener noreferrer"
-              aria-label="Medium Profile">
-              <img src="img/icons/medium.png" alt="Medium icon">
-            </a>
-          </div>
-          <div class="icon">
-            <a href="mailto:collinvine@gmail.com" aria-label="Send Email">
-              <img src="img/icons/email.png" alt="Email icon">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Script placed before closing </body> for better performance -->
+  <!-- Global Sticky Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">COLLIN VINE</a>
+      <div class="social-icons">
+        <a href="https://twitter.com/collinvine" target="_blank" rel="noopener noreferrer" class="social-icon"
+          aria-label="Twitter">
+          <img src="img/icons/twitter.png" alt="Twitter">
+        </a>
+        <a href="https://github.com/collinvine" target="_blank" rel="noopener noreferrer" class="social-icon"
+          aria-label="GitHub">
+          <img src="img/icons/github.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/collinvine/" target="_blank" rel="noopener noreferrer" class="social-icon"
+          aria-label="LinkedIn">
+          <img src="img/icons/li.png" alt="LinkedIn">
+        </a>
+        <a href="https://medium.com/@collinvine" target="_blank" rel="noopener noreferrer" class="social-icon"
+          aria-label="Medium">
+          <img src="img/icons/medium.png" alt="Medium">
+        </a>
+        <a href="mailto:collinvine@gmail.com" class="social-icon" aria-label="Email">
+          <img src="img/icons/email.png" alt="Email">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-grid">
+
+          <div class="hero-text">
+            <h1>Hey, I'm Collin.</h1>
+            <p class="hero-intro">
+              I'm a 2x founder of <a href="https://zirtual.com" target="_blank" rel="noopener noreferrer">Zirtual</a>
+              and then <a href="https://colony.io" target="_blank" rel="noopener noreferrer">Colony</a>. Currently I'm
+              building new AI products at Google.
+            </p>
+            <p class="hero-intro">
+              I'm an operational & UX-focused product leader who enjoys building things: companies, cultures, teams,
+              products, and ultimately value.
+            </p>
+            <p class="hero-intro">
+              That's <span class="trigger" id="meTrigger" tabindex="0">me</span> after receiving a $10k check for
+              winning a startup pitch competition. You can also see me <span class="trigger" id="handstandTrigger"
+                tabindex="0">doing a handstand</span>, <span class="trigger" id="familyTrigger" tabindex="0">hangin'
+                with my family</span>, or you can check out <span class="trigger" id="sourdoughTrigger" tabindex="0">my
+                homemade sourdough</span>.
+            </p>
+          </div>
+
+          <div class="image-container">
+            <img src="img/me.jpg" alt="Collin Vine speaking on stage" class="hero-image" id="mainImage">
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Now Section -->
+      <section class="now-section">
+        <div class="section-label">WHAT I'M DOING NOW</div>
+
+        <div class="timeline-edgy">
+
+          <!-- Item 1: Aug 8th 2021 -->
+          <div class="item">
+            <span class="date">2021-08-08_UPDATE</span>
+            <div>
+              <p>After several months in the job market and with 4 good offers on the table, I took a job as a PM at
+                YouTube at the end of Feb.</p>
+              <p>It's completely different from what I expected. Given the size of Google/YouTube, I was expecting the
+                work to be narrow and—relative to my founder experience—boring. Yet, I expected the training and
+                this-is-how-we-build-products to be world class. Neither is true. My scope and area of ownership is
+                large which I love. However, I've been surprised to experience how immature the org is.</p>
+              <p>Overall I'm enjoying it and it is a great place for me right now. I get to go deep into my craft of
+                building products, get paid very well relatively to startup life, and experience new things amidst a
+                great group of people.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: Nov 20th 2020 -->
+          <div class="item">
+            <span class="date">2020-11-20_UPDATE</span>
+            <div>
+              <p>At the end of September, I decided to leave Colony, the company I co-founded, after 4.5 years. I
+                probably have an entire post explaining why and how I came to that conclusion, but suffice it to say it
+                was the right time for me to move forward.</p>
+              <p>My main focus now is coding. For about 2-years, I’ve been learning to code part time. I’ve completed a
+                <a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011" target="_blank"
+                  rel="noopener noreferrer">Udacity nanodegree</a>, built a chrome extension, and have done some other
+                online courses and small side projects. Yet I have never felt like I had the depth that I wanted.
+              </p>
+              <p>That’s when I heard about <a href="https://launchschool.com/" target="_blank"
+                  rel="noopener noreferrer">Launch School</a>. Their mastery-based pedagogy really spoke to me. I’m also
+                in the job market for the first time in my adult life. I passed through Google's hiring process and was
+                approved by their hiring committee earlier this year. I’m currently in the team match / offer stage with
+                them.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
   <script src="code.js"></script>
 </body>
 
