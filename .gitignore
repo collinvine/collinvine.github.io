@@ -1,0 +1,18 @@
+# Standard Mac/Web ignore rules
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Logs and databases
+*.log
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Agent configuration
+.agent/
+.gemini/
+.replit
+replit.nix
