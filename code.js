@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Image Data Map
   const imageMap = {
     meTrigger: {
-      src: 'img/me.jpg',
+      src: 'img/me.webp',
       alt: "Collin Vine speaking on stage at a 'Proof of Work Champion' event for Colony."
     },
     handstandTrigger: {
-      src: 'img/handstand.jpg',
+      src: 'img/handstand.webp',
       alt: 'Collin Vine doing a handstand overlooking the city of Dubrovnik, Croatia.'
     },
     familyTrigger: {
-      src: 'img/family.jpg',
+      src: 'img/family.webp',
       alt: 'Collin Vine with his wife and young child, smiling.'
     },
     sourdoughTrigger: {
-      src: 'img/sourdough.jpg',
+      src: 'img/sourdough.webp',
       alt: 'A sliced loaf of homemade sourdough bread on a wooden cutting board.'
     }
   };
@@ -104,6 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Keyboard Accessibility
     trigger.addEventListener('focus', () => activateTrigger(trigger));
     trigger.addEventListener('blur', resetToLockedState);
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        lockTrigger(trigger);
+      }
+    });
   });
+
+  // Preload Images
+  const preloadImages = () => {
+    Object.values(imageMap).forEach(data => {
+      const img = new Image();
+      img.src = data.src;
+    });
+  };
+  preloadImages();
 
 });

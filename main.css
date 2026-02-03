@@ -7,7 +7,6 @@
   --text-muted: #222;
   /* High Contrast "Muted" */
   --brand-accent: #000;
-  /* Replaced Blue with Black */
   --highlight-accent: #FDE047;
   --white: #FFFFFF;
   --border-color: #E5E7EB;
@@ -162,7 +161,6 @@ a:hover {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  /* aspect-ratio removed to allow natural height */
 }
 
 .hero-image {
@@ -175,16 +173,6 @@ a:hover {
   z-index: 2;
   border: 3px solid #000;
   box-shadow: 8px 8px 0 #000;
-  /* Brutalist shadow */
-}
-
-/* Removed old border effect */
-.image-container::before {
-  display: none;
-}
-
-.image-container:hover::before {
-  display: none;
 }
 
 /* HIGHLIGHTER INTERACTION */
