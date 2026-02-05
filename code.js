@@ -24,17 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
       src: 'img/me.webp',
       alt: "Collin Vine speaking on stage at a 'Proof of Work Champion' event for Colony."
     },
-    handstandTrigger: {
-      src: 'img/handstand.webp',
-      alt: 'Collin Vine doing a handstand overlooking the city of Dubrovnik, Croatia.'
+    runTrigger: {
+      src: 'img/run.jpg',
+      alt: 'Collin Vine in the midst of a 25km trail run.'
     },
-    familyTrigger: {
-      src: 'img/family.webp',
-      alt: 'Collin Vine with his wife and young child, smiling.'
+    halloweenTrigger: {
+      src: 'img/halloween.jpg',
+      alt: 'Collin Vine hanging with his family in Halloween garb.'
     },
-    sourdoughTrigger: {
+    breadTrigger: {
       src: 'img/sourdough.webp',
-      alt: 'A sliced loaf of homemade sourdough bread on a wooden cutting board.'
+      alt: 'Collin Vine with a loaf of homemade sourdough bread.'
     }
   };
 
