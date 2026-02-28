@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Track which trigger is "locked" via click
   let lockedTrigger = null;
+  let resetTimeout = null;
 
   // Image Data Map
   const imageMap = {
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to activate a trigger (for hover/focus)
   const activateTrigger = (trigger) => {
+    clearTimeout(resetTimeout);
     const id = trigger.id;
     const data = imageMap[id];
 
@@ -70,17 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to reset to locked state (or original if nothing locked)
   const resetToLockedState = () => {
-    if (lockedTrigger) {
-      const data = imageMap[lockedTrigger.id];
-      updateActiveClass(lockedTrigger);
-      if (data) {
-        updateImage(data);
+    clearTimeout(resetTimeout);
+    resetTimeout = setTimeout(() => {
+      if (lockedTrigger) {
+        const data = imageMap[lockedTrigger.id];
+        updateActiveClass(lockedTrigger);
+        if (data) {
+          updateImage(data);
+        }
+      } else {
+        updateActiveClass(null);
+        mainImage.src = originalState.src;
+        mainImage.alt = originalState.alt;
       }
-    } else {
-      updateActiveClass(null);
-      mainImage.src = originalState.src;
-      mainImage.alt = originalState.alt;
-    }
+    }, 120);
   };
 
   // Function to lock a trigger via click
